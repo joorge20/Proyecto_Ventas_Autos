@@ -1,0 +1,29 @@
+# Medidas DAX
+
+```DAX
+//Total de Ventas:
+Total Ventas =
+SUM ( car_prices[sellingprice] )
+
+// Ventas Precio Esperado
+Total Ventas Precio Esperado =
+SUM ( car_prices[mmr] )
+
+Promedio Kilometraje KMH = [Promedio Kilometraje] * 1.60934
+Promedio Kilometraje = AVERAGE(car_prices[odometer])
+Precio Promedio MMR = AVERAGE(car_prices[mmr] )
+Precio Promedio = AVERAGE(car_prices[sellingprice] )
+
+Porcentaje Vehiculos Vendidos = DIVIDE([Cantidad Ventas],CALCULATE([Cantidad Ventas],ALL(Vehiculos[Brand])),0)
+
+Odometro KMH = SUM(car_prices[odometer])* 1.60934
+
+Diferencia Precios Porcentaje = DIVIDE([Total Ventas] - [Total Ventas Precio Esperado], [Total Ventas Precio Esperado])
+
+Diferencia Precios = [Total Ventas] - [Total Ventas Precio Esperado]
+
+Diferencia Ingresos = AVERAGEX(car_prices,car_prices[sellingprice] - car_prices[mmr]) 
+
+Cantidad Ventas = COUNT(car_prices[Índice])
+
+Calidad Promedio Autos = AVERAGE(car_prices[condition])
