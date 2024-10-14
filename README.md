@@ -26,8 +26,7 @@ Este Conjunto de Datos se obtiene desde la Pagina de Kaggle en el Siguient Link:
 
 # Limpieza Tabla Usando SQL
 La informacion se descgargo en Kaggle en formato CSV, se importo a SQL Managment Studio utilizando la herramienta de Importar Archivos, con la informacion cargada se comenzo a Trabajar. 
-En el Siguiente Link de Notion tengo Notas con Imagenes del proceso de Limpieza de la Informacion Utilizando SQL.
-
+En el Documento de Word Limpieza de Datos se observa con Imagenes y pqeueñas descripciones el proceso de Limpieza. (Limpieza Vehiculos.docx)
 ```sql
 -- Validar el Tipo de Dato con el que se creo la informacion
 exec sp_help car_prices;
