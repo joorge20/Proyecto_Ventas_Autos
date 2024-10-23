@@ -73,55 +73,46 @@ CALCULATE ( [Cantidad Autos], VALUES ( Vehiculos[year] ) )
 ```DAX
 Diferencia Precio Real vs MMR =
 SUMX ( Ventas, Ventas[sellingprice] - Ventas[mmr] )
-
 ```
 -  Precio Autos Automaticos: Medida que obtiene el precio promedio de venta de los Autos con Tranmision Automatica
 ```DAX
 Precio Autos Automaticos =
 CALCULATE ( [Promedio Precio Venta], Vehiculos[transmission] = "Automatic" )
-
 ```
 -  Precio Promedio Autos Manuales: Medida que obtiene el precio promedio de venta de los Autos con Tranmision Manual
 ```DAX
 Precio Promedio Autos manual =
 CALCULATE ( [Promedio Precio Venta], Vehiculos[transmission] = "manual" )
-
 ```
 -  Promedio Odometro KMH: Meida para convertir la cantidad de MPH del Odometro a KPH
 ```DAX
 Promedio Odometro KMH =
 [Promedio Odometro MPH] * 1.60934
-
 ```
 -  Promedio Odometro KMH Automatico: Medida que obtiene la medida del Odometro en KPH para los autos de transmision Automatica
 ```DAX
 Promedio Odometro kmh Automatico =
 CALCULATE ( [Promedio Odometro KMH], Vehiculos[transmission] = "Automatic" )
-
 ```
 -  Promedio Odometro KMH Manual: Medida que obtiene la medida del Odometro en KPH para los autos de transmision Manual
 ```DAX
 Promedio Odometro kmh Manual =
 CALCULATE ( [Promedio Odometro KMH], Vehiculos[transmission] = "Manual" )
-
 ```
 -  Promedio Odometro MPH Automatico: Medida que obtiene la medida del Odometro en MPH para los autos de transmision Automatica
 ```DAX
 Promedio Odometro MPH Automatico =
 CALCULATE ( [Promedio Odometro MPH], Vehiculos[transmission] = "Automatic" )
-
 ```
 -  Promedio Odometro MPH Manual: Medida que obtiene la medida del Odometro en MPH para los autos de transmision Manual
 ```DAX
 Promedio Odometro MPH Manual =
 CALCULATE ( [Promedio Odometro MPH], Vehiculos[transmission] = "Manual" )
-
 ```
 -  Suma Odometro KPH: Suma de la columna Odometro en KPH
 ```DAX
 Suma Odometro KPH =
 SUMX ( Ventas, [Suma Odometro MPH] * 1.60934 )
-
 ```
 -  % Ventas del total: Saca el porcentaje de Ventas del Total que le corresponde a cada Estado,
 ```DAX
@@ -133,7 +124,6 @@ VAR Resultado =
     DIVIDE ( Tota_precioVenta, Total_Precio_State, 0 )
 RETURN
     Resultado
-
 ```
 -  % Total Autos Vendidos: Saca el porcentaje del total de los autos vendidos que le corresponde a cada Estado,
 ```DAX
@@ -145,7 +135,6 @@ VAR Resultado =
     DIVIDE ( Tota_precioVenta, Total_Precio_State, 0 )
 RETURN
     Resultado
-
 ```
 -  % Diferencia de Precios: Saca el porcentaje del Total de la diferencia de precio que le corresponde a cada Estado,
 ```DAX
@@ -157,7 +146,6 @@ VAR Resultado =
     DIVIDE ( Tota_precioVenta, Total_Precio_State, 0 )
 RETURN
     Resultado
-
 ```
 
 ## Visualizaciones
