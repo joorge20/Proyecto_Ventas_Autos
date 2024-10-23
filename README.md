@@ -8,7 +8,7 @@ Este es proyecto es sobre un conjunto de datos que encontre en la Pagina de Kagg
 Encontrar Inshights interesantes a traves de la visualizacion de Datos
 
 # Links a Documentacion
-  -  Limpieza SQL
+  -  [Limpieza SQL](https://github.com/joorge20/Proyecto_Ventas_Autos/blob/main/1_Limpieza_SQL.md)
   -  Creacion Dashboard Power BI
 
 # Conjunto de Datos
