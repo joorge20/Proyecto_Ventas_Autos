@@ -4,12 +4,15 @@
 Hola!
 Este es proyecto es sobre un conjunto de datos que encontre en la Pagina de Kaggle, acerca de un Lote de autos en Estados Unidos, me parecio interesante ya que se puede trabajar la parte de limpieza de datos usando SQL y la Parte de visualizacion de la informacion utilizando Power BI.
 
-#Objetivo
-Encontrar Inshights interesantes a traves de la visualizacion de Datos
+# Objetivo
+Encontrar Inshights interesantes a traves de la visualizacion de Datos, 
+
+![](Imagenes/12_Tablero_1.png)
+
 
 # Links a Documentacion
   -  [Limpieza SQL](https://github.com/joorge20/Proyecto_Ventas_Autos/blob/main/1_Limpieza_SQL.md)
-  -  Creacion Dashboard Power BI
+  -  [Creacion Dashboard Power BI](2_Creacion_Dashboard.md)
 
 # Conjunto de Datos
 Este Conjunto de Datos se obtiene desde la Pagina de Kaggle en el Siguient Link: [Vehicle Sales Data](https://www.kaggle.com/datasets/syedanwarafridi/vehicle-sales-data)
