@@ -46,6 +46,123 @@ Se crean 2 tablas para medidas:
 -  Medidas Especificas: Porcentajes, Con Filtros ETC.
 ![](Imagenes/11_Relaciones.png)
 
+## DAX
+Medidas Especificas.
+
+-  Cantidad Autos Automaticos
+```DAX
+Cantidad Autos Automaticos =
+CALCULATE ( [Cantidad Ventas Autos], Vehiculos[transmission] = "Automatic" )
+
+```
+-  Cantidad Autos Manual
+```DAX
+Cantidad Autos Manual =
+CALCULATE ( [Cantidad Ventas Autos], Vehiculos[transmission] = "manual" )
+```
+-  Cantidad Modelos Marca
+```DAX
+Cantidad Modelos por Marca =
+CALCULATE ( [Cantidad Autos], VALUES ( Vehiculos[MODEL] ) )
+
+```
+-  Cantidad Vehiculos por Año
+```DAX
+Cantidad Vehiculos por Año =
+CALCULATE ( [Cantidad Autos], VALUES ( Vehiculos[year] ) )
+
+```
+-  Diferencia precio Real vs MMR
+```DAX
+Diferencia Precio Real vs MMR =
+SUMX ( Ventas, Ventas[sellingprice] - Ventas[mmr] )
+
+```
+-  Precio Autos Automaticos
+```DAX
+Precio Autos Automaticos =
+CALCULATE ( [Promedio Precio Venta], Vehiculos[transmission] = "Automatic" )
+
+```
+-  Precio Promedio Autos Manuales
+```DAX
+Precio Promedio Autos manual =
+CALCULATE ( [Promedio Precio Venta], Vehiculos[transmission] = "manual" )
+
+```
+-  Promedio Odometro KMH
+```DAX
+Promedio Odometro KMH =
+[Promedio Odometro MPH] * 1.60934
+
+```
+-  Promedio Odometro KMH Automatico
+```DAX
+Promedio Odometro kmh Automatico =
+CALCULATE ( [Promedio Odometro KMH], Vehiculos[transmission] = "Automatic" )
+
+```
+-  Promedio Odometro KMH Manual
+```DAX
+Promedio Odometro kmh Manual =
+CALCULATE ( [Promedio Odometro KMH], Vehiculos[transmission] = "Manual" )
+
+```
+-  Promedio Odometro MPH Automatico
+```DAX
+Promedio Odometro MPH Automatico =
+CALCULATE ( [Promedio Odometro MPH], Vehiculos[transmission] = "Automatic" )
+
+```
+-  Promedio Odometro MPH Manual
+```DAX
+Promedio Odometro MPH Manual =
+CALCULATE ( [Promedio Odometro MPH], Vehiculos[transmission] = "Manual" )
+
+```
+-  Suma Odometro KPH
+```DAX
+Suma Odometro KPH =
+SUMX ( Ventas, [Suma Odometro MPH] * 1.60934 )
+
+```
+-  % Ventas del total
+```DAX
+% Ventas del Total =
+VAR Tota_precioVenta = [Suma Precio Venta]
+VAR Total_Precio_State =
+    CALCULATE ( [Suma Precio Venta], ALL ( Ventas ) )
+VAR Resultado =
+    DIVIDE ( Tota_precioVenta, Total_Precio_State, 0 )
+RETURN
+    Resultado
+
+```
+-  % Total Autos Vendidos
+```DAX
+% Total Autos Vendidos =
+VAR Tota_precioVenta = [Cantidad Ventas Autos]
+VAR Total_Precio_State =
+    CALCULATE ( [Cantidad Ventas Autos], ALL ( Ventas ) )
+VAR Resultado =
+    DIVIDE ( Tota_precioVenta, Total_Precio_State, 0 )
+RETURN
+    Resultado
+
+```
+-  % Diferencia de Precios
+```DAX
+% Diferencia Precios =
+VAR Tota_precioVenta = [Diferencia Precio Real vs MMR]
+VAR Total_Precio_State =
+    CALCULATE ( [Diferencia Precio Real vs MMR], ALL ( Ventas ) )
+VAR Resultado =
+    DIVIDE ( Tota_precioVenta, Total_Precio_State, 0 )
+RETURN
+    Resultado
+
+```
+
 ## Visualizaciones
 ![](Imagenes/12_Tablero_1.png)
 ![](Imagenes/13_Tablero_2.png)
