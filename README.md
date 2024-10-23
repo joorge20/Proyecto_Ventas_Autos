@@ -7,7 +7,7 @@ Este es proyecto es sobre un conjunto de datos que encontre en la Pagina de Kagg
 # Objetivo
 Encontrar Inshights interesantes a traves de la visualizacion de Datos, 
 
-![](Imagenes/12_Tablero_1.png)
+![](Imagenes/Lotes-y-Tianguis-de-Autos.jpg)
 
 
 # Links a Documentacion
@@ -33,3 +33,10 @@ Este Conjunto de Datos se obtiene desde la Pagina de Kaggle en el Siguient Link:
 -  MMR: Valor Estimado en el Mercado.
 -  SellingPrice: Precio de Venta
 -  SaleDate: Fecha de la Venta
+
+# Resultado
+![](Imagenes/12_Tablero_1.png)
+![](Imagenes/13_Tablero_2.png)
+![](Imagenes/14_Tablero_3.png)
+![](Imagenes/15_Tablero_4.png)
+![](Imagenes/16_Tablero_5.png)
