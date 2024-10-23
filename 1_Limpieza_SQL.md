@@ -53,6 +53,8 @@ FROM   car_prices;
 Se detectaron Valores que se pueden Agrupar, y columnas con Valores NULL,
 Las columnas que se pueden agrupar se hace mediante un update sencillo, y las columnas NULL se valido y son registros que no contienen informacion relevante, por lo que
 se procede a elimianr los registros.
+![](Imagenes/1_Brand.png)
+
 ```sql
 SELECT DISTINCT brand,
                 Count(*)
@@ -60,9 +62,13 @@ FROM   vehiculos
 GROUP  BY brand
 ORDER  BY 1; 
 ```
+![](Imagenes/2_Brand.png)
+
 ### Columna MODEL
 No hay modelos repetido, pero existen valores NULL, al validarlos por Descripcion, estos Modelos en NULL, comparten Marca y Descripcion con registros que ya existen en el catalogo,
 por lo que manualmente se actualiza la informacion.
+
+![](Imagenes/3_Model.png)
 
 ### Columna Desacripcion
 No se corrige, ya que es un texto demasiado variable
@@ -77,6 +83,8 @@ En este paso encontre 2 escenarios,
 -  Cuando NULL es el ID 3.
 -  Cuando ID es el 2.
 
+![](Imagenes/5_Type.png)
+![](Imagenes/6_Update_Type.png)
 Se anexan las consultas utilizadas, para realizar los updates se uso EXCEL concatenando un UPDATE.
 ```sql
 -- NULL = 3
@@ -169,9 +177,12 @@ WHERE  A.v_type IS NOT NULL
        AND b.v_type IS NULL; 
 ```
 
+
 ### Columna TRANSMISSION
 Se enceunrtan Valores NULL, y se aplica la misma logica del paso anterior, se pone la TRANSMISSION que mas comparta un vehiculo por marca y Modelo.
 Se repite el Escenario anterior del 2 y 3.
+
+![](Imagenes/7_Transmission.png)
 
 ```sql
 WITH conteo
@@ -223,6 +234,8 @@ Se aplica la misma logica de los dos Escenarios anteriores, utilizando el mismo 
 ## Remover Duplicados
 Se remueven filas que contengan los mismos datos, se utiliza la llave que se creo, se cuenta cuantas veces aparece, y si aparece mas de una vez se eliminan los diferentes a 1
 
+![](Imagenes/8_Dulplicados.png)
+
 ```sql
 WITH duplicados
      AS (SELECT *,
@@ -235,6 +248,7 @@ WITH duplicados
 DELETE FROM duplicados
 WHERE  rn > 1;
 ```
+
 ## Columna Nueva con los ID's de Datos Corregidos.
 ```sql
 ALTER TABLE vehiculos ADD id_vehiculo2 NVARCHAR(20);
